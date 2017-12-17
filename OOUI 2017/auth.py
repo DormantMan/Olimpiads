@@ -69,8 +69,7 @@ try:
     soup = BeautifulSoup(r.text, 'lxml')
     table = soup.find("table", attrs={"class": "standings"})
     headings = [th.get_text() for th in table.find("tr").find_all("th")]
-except Exception as er:
-    print(er)
+except:
     s = requests.session()
     headers = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
     login = s.get('https://pcms.university.innopolis.ru/pcms2client/login.xhtml')
